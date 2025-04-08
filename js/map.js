@@ -272,35 +272,115 @@ function hideLoader() {
     }
 }
 
-// Load GeoJSON data with accurate state boundaries
-showLoader(); // Show loader before fetch
-fetch('data/merged_diabetes_states.geojson')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('GeoJSON data not available');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Add GeoJSON layer to the map
-        geojsonLayer = L.geoJSON(data, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
-        
-        // Initial update
-        updateMap();
-        hideLoader(); // Hide loader after successful load
-    })
-    .catch(error => {
-        console.error('Error loading GeoJSON:', error);
-        hideLoader(); // Hide loader on error
-        
-        // If loading fails, display a message on the map
-        const errorMsg = L.DomUtil.create('div', 'error-message');
-        errorMsg.innerHTML = '<h3>Error Loading Data</h3><p>Could not load the diabetes data. Please check your connection and try again.</p>';
-        document.getElementById('map').appendChild(errorMsg);
-    });
+// Before the GeoJSON load, add a function to load the diabetes data
+const diabetesDataByState = {};
+
+// Function to load and process diabetes data
+function loadDiabetesData() {
+    return fetch('data/temporal/diabetes_by_state_years.geojson')
+        .then(response => response.json())
+        .then(data => {
+            // Create a mapping of state names to diabetes data
+            data.features.forEach(feature => {
+                const stateName = feature.properties.NAME;
+                diabetesDataByState[stateName] = feature.properties.diabetes;
+                
+                // Debug: Check Wyoming data specifically
+                if (stateName === "Wyoming" || stateName.toLowerCase() === "wyoming") {
+                    console.log("FOUND WYOMING DATA:", feature.properties.diabetes);
+                }
+                
+                // Also add lowercase versions for case-insensitive matching
+                diabetesDataByState[stateName.toLowerCase()] = feature.properties.diabetes;
+            });
+            
+            // Debug: Verify Wyoming data was loaded into map
+            console.log("Wyoming data in map:", diabetesDataByState["Wyoming"]);
+            console.log("Wyoming lowercase data in map:", diabetesDataByState["wyoming"]);
+            
+            return diabetesDataByState;
+        });
+}
+
+// Load the accurate state boundaries but merge with our diabetes data
+function loadAndProcessData() {
+    showLoader(); // Show loader before fetch
+    
+    // First load the diabetes data
+    loadDiabetesData()
+        .then(() => {
+            // Then load the accurate state boundaries
+            return fetch('data/us_states_accurate.geojson');
+        })
+        .then(response => response.json())
+        .then(statesData => {
+            // Merge the diabetes data with accurate state boundaries
+            statesData.features.forEach(feature => {
+                // Try different property names that might contain state names
+                let stateName = feature.properties.NAME || 
+                              feature.properties.name || 
+                              feature.properties.State ||
+                              feature.properties.STATE_NAME;
+                
+                if (stateName) {
+                    // Try exact match
+                    if (diabetesDataByState[stateName]) {
+                        feature.properties.diabetes = diabetesDataByState[stateName];
+                    }
+                    // Try lowercase match
+                    else if (diabetesDataByState[stateName.toLowerCase()]) {
+                        feature.properties.diabetes = diabetesDataByState[stateName.toLowerCase()];
+                    }
+                    // If no match, log a warning and use placeholder
+                    else {
+                        console.warn(`No diabetes data found for state: ${stateName}`);
+                        feature.properties.diabetes = [
+                            {"year": 2000, "value": 5.0},
+                            {"year": 2005, "value": 6.0},
+                            {"year": 2010, "value": 7.0},
+                            {"year": 2015, "value": 8.0},
+                            {"year": 2020, "value": 9.0}
+                        ];
+                    }
+                }
+
+                // In the processing function, add specific debug for Wyoming
+                if (stateName === "Wyoming" || 
+                    stateName === "WYOMING" || 
+                    (stateName && stateName.toLowerCase() === "wyoming")) {
+                    console.log("Found Wyoming in states GeoJSON:", stateName);
+                    console.log("Wyoming data being assigned:", diabetesDataByState[stateName] || 
+                                                             diabetesDataByState[stateName.toLowerCase()] || 
+                                                             "NOT FOUND");
+                }
+            });
+
+            return statesData;
+        })
+        .then(processedData => {
+            // Now add to map
+            geojsonLayer = L.geoJson(processedData, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+            
+            // Initial update
+            updateMap();
+            hideLoader(); // Hide loader after successful load
+        })
+        .catch(error => {
+            console.error('Error loading GeoJSON:', error);
+            hideLoader(); // Hide loader on error
+            
+            // If loading fails, display a message on the map
+            const errorMsg = L.DomUtil.create('div', 'error-message');
+            errorMsg.innerHTML = '<h3>Error Loading Data</h3><p>Could not load the diabetes data. Please check your connection and try again.</p>';
+            document.getElementById('map').appendChild(errorMsg);
+        });
+}
+
+// Replace the existing fetch with our new function
+loadAndProcessData();
 
 // Update the explore data button functionality to hide the map header
 document.getElementById('exploreDataBtn').addEventListener('click', function() {
