@@ -1,55 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>US Diabetes Prevalence Map (2000-2020)</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div id="container">
-        <div id="map"></div>
-        <div id="info">
-            <div class="info-header">
-                <h3>US Diabetes Prevalence Map</h3>
-            </div>
-            
-            <div class="slidecontainer">
-                <div class="slider-label">
-                    <span>Year: </span>
-                    <span id="yearDisplay">2020</span>
-                </div>
-                <input type="range"
-                    min="2000" max="2020" value="2020" step="5"
-                    class="slider" id="yearSlider"
-                />
-            </div>
-            
-            <div class="national-stats">
-                <h4>National Statistics</h4>
-                <p>National Diabetes Prevalence: <span id="nationalRate">8.8%</span></p>
-                <p>Range: <span id="nationalRange">8.4% - 9.2%</span></p>
-            </div>
-            
-            <table id="diabetesTable">
-                <tr>
-                    <th>State</th>
-                    <th>Year</th>
-                    <th>Prevalence (%)</th>
-                </tr>
-            </table>
+      <div class="map-header">
+        <h1>Diabetes Prevalence in the United States</h1>
+        <p>Interactive visualization showing diabetes rates from 2000-2020</p>
+        <button id="exploreDataBtn" class="cta-button">Explore the Data</button>
+      </div>
+      <div id="map"></div>
+      <div id="info">
+        <div class="info-header">
+          <h3>US Diabetes Prevalence Map</h3>
+          <button id="backToMapBtn" class="back-button">
+            <span>&larr;</span> Back to Map
+          </button>
         </div>
+
+        <div class="slidecontainer">
+          <div class="slider-label">
+            <span>Year: </span>
+            <span id="yearDisplay">2020</span>
+          </div>
+          <input
+            type="range"
+            min="2000"
+            max="2020"
+            value="2020"
+            step="5"
+            class="slider"
+            id="yearSlider"
+          />
+        </div>
+
+        <div class="national-stats">
+          <h4>National Statistics</h4>
+          <p>
+            National Diabetes Prevalence: <span id="nationalRate">8.8%</span>
+          </p>
+          <p>Range: <span id="nationalRange">8.4% - 9.2%</span></p>
+        </div>
+
+        <!-- Add this div to hold the table caption -->
+        <div id="tableCaption" class="table-caption" style="display: none">
+          <h4>State Data</h4>
+          <p>Hover over a state to see details</p>
+        </div>
+
+        <table id="diabetesTable">
+          <tr>
+            <th>State</th>
+            <th>Year</th>
+            <th>Prevalence (%)</th>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <script src="js/map.js"></script>
-</body>
+  </body>
 </html>
