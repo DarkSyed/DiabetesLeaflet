@@ -1,0 +1,260 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Alabama",
+        "diabetes": [
+          {"year": 2000, "value": 8.5},
+          {"year": 2005, "value": 9.2},
+          {"year": 2010, "value": 11.3},
+          {"year": 2015, "value": 12.8},
+          {"year": 2020, "value": 14.5}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-88.2, 35], [-84.9, 35], [-84.9, 31], [-88.2, 31], [-88.2, 35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Alaska",
+        "diabetes": [
+          {"year": 2000, "value": 4.2},
+          {"year": 2005, "value": 5.3},
+          {"year": 2010, "value": 6.5},
+          {"year": 2015, "value": 7.4},
+          {"year": 2020, "value": 8.3}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-170, 70], [-140, 70], [-140, 55], [-170, 55], [-170, 70]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Arizona",
+        "diabetes": [
+          {"year": 2000, "value": 5.6},
+          {"year": 2005, "value": 7.1},
+          {"year": 2010, "value": 8.4},
+          {"year": 2015, "value": 9.6},
+          {"year": 2020, "value": 10.7}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-114.8, 37], [-109, 37], [-109, 31.3], [-114.8, 31.3], [-114.8, 37]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Arkansas",
+        "diabetes": [
+          {"year": 2000, "value": 7.2},
+          {"year": 2005, "value": 8.8},
+          {"year": 2010, "value": 10.3},
+          {"year": 2015, "value": 11.8},
+          {"year": 2020, "value": 13.2}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-94.6, 36.5], [-89.7, 36.5], [-89.7, 33], [-94.6, 33], [-94.6, 36.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "California",
+        "diabetes": [
+          {"year": 2000, "value": 5.5},
+          {"year": 2005, "value": 6.8},
+          {"year": 2010, "value": 7.9},
+          {"year": 2015, "value": 8.8},
+          {"year": 2020, "value": 9.8}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-124.4, 42], [-120, 42], [-114.1, 35], [-114.1, 32.5], [-117.2, 32.5], [-124.4, 38], [-124.4, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Colorado",
+        "diabetes": [
+          {"year": 2000, "value": 3.8},
+          {"year": 2005, "value": 4.8},
+          {"year": 2010, "value": 5.7},
+          {"year": 2015, "value": 6.6},
+          {"year": 2020, "value": 7.4}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-109, 41], [-102, 41], [-102, 37], [-109, 37], [-109, 41]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Connecticut",
+        "diabetes": [
+          {"year": 2000, "value": 5.1},
+          {"year": 2005, "value": 6.3},
+          {"year": 2010, "value": 7.4},
+          {"year": 2015, "value": 8.3},
+          {"year": 2020, "value": 9.1}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-73.7, 42], [-71.8, 42], [-71.8, 41], [-73.7, 41], [-73.7, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Delaware",
+        "diabetes": [
+          {"year": 2000, "value": 6.2},
+          {"year": 2005, "value": 7.6},
+          {"year": 2010, "value": 9.0},
+          {"year": 2015, "value": 10.2},
+          {"year": 2020, "value": 11.3}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-75.8, 39.8], [-75, 39.8], [-75, 38.5], [-75.8, 38.5], [-75.8, 39.8]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Florida",
+        "diabetes": [
+          {"year": 2000, "value": 6.2},
+          {"year": 2005, "value": 7.6},
+          {"year": 2010, "value": 8.9},
+          {"year": 2015, "value": 10.1},
+          {"year": 2020, "value": 11.2}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-87.6, 31], [-85, 31], [-80, 26], [-80, 25], [-83, 24], [-87.6, 30], [-87.6, 31]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Georgia",
+        "diabetes": [
+          {"year": 2000, "value": 6.7},
+          {"year": 2005, "value": 8.2},
+          {"year": 2010, "value": 9.6},
+          {"year": 2015, "value": 10.9},
+          {"year": 2020, "value": 12.1}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-85.6, 35], [-80.9, 35], [-80.9, 30.6], [-85.6, 30.6], [-85.6, 35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Hawaii",
+        "diabetes": [
+          {"year": 2000, "value": 5.8},
+          {"year": 2005, "value": 7.1},
+          {"year": 2010, "value": 8.4},
+          {"year": 2015, "value": 9.5},
+          {"year": 2020, "value": 10.5}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-160, 22], [-155, 22], [-155, 18], [-160, 18], [-160, 22]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Idaho",
+        "diabetes": [
+          {"year": 2000, "value": 4.6},
+          {"year": 2005, "value": 5.7},
+          {"year": 2010, "value": 6.7},
+          {"year": 2015, "value": 7.6},
+          {"year": 2020, "value": 8.4}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-117.2, 49], [-111.1, 49], [-111.1, 42], [-117.2, 42], [-117.2, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Illinois",
+        "diabetes": [
+          {"year": 2000, "value": 5.7},
+          {"year": 2005, "value": 7.0},
+          {"year": 2010, "value": 8.3},
+          {"year": 2015, "value": 9.4},
+          {"year": 2020, "value": 10.4}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-91.5, 42.5], [-87.5, 42.5], [-87.5, 37], [-91.5, 37], [-91.5, 42.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Indiana",
+        "diabetes": [
+          {"year": 2000, "value": 6.5},
+          {"year": 2005, "value": 8.0},
+          {"year": 2010, "value": 9.4},
+          {"year": 2015, "value": 10.7},
+          {"year": 2020, "value": 11.8}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-88, 41.8], [-84.8, 41.8], [-84.8, 37.8], [-88, 37.8], [-88, 41.8]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Iowa",
+        "diabetes": [
+          {"year": 2000, "value": 5.1},
+          {"year": 2005, "value": 6.3},
+          {"year": 2010, "value": 7.4},
+          {"year": 2015, "value": 8.4},
+          {"year": 2020, "value": 9.3}
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-96.6, 43.5], [-91, 43.5], [-91, 40.4], [-96.6, 40.4], [-96.6, 43.5]]]
+      }
+    }
+  ]
+}

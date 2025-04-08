@@ -1,0 +1,162 @@
+#container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#map { 
+    height: 100vh;
+    width: 60%;
+}
+
+#info {
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 40%;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+}
+
+.info-header {
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+}
+
+.info-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.slidecontainer {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+}
+
+.national-stats {
+    padding: 15px;
+    background-color: #f1f1f1;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+}
+
+.national-stats h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3498db;
+    color: white;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    
+    #map {
+        width: 100%;
+        height: 60vh;
+    }
+    
+    #info {
+        width: 100%;
+        height: 40vh;
+    }
+}

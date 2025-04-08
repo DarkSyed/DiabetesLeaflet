@@ -1,0 +1,555 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Alabama",
+        "DIABETES_CRUDE_PREV": 14.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-88.2, 35], [-84.9, 35], [-84.9, 31], [-88.2, 31], [-88.2, 35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Alaska",
+        "DIABETES_CRUDE_PREV": 8.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-170, 70], [-140, 70], [-140, 55], [-170, 55], [-170, 70]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Arizona",
+        "DIABETES_CRUDE_PREV": 10.7
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-114.8, 37], [-109, 37], [-109, 31.3], [-114.8, 31.3], [-114.8, 37]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Arkansas",
+        "DIABETES_CRUDE_PREV": 13.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-94.6, 36.5], [-89.7, 36.5], [-89.7, 33], [-94.6, 33], [-94.6, 36.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "California",
+        "DIABETES_CRUDE_PREV": 9.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-124.4, 42], [-120, 42], [-114.1, 35], [-114.1, 32.5], [-117.2, 32.5], [-124.4, 38], [-124.4, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Colorado",
+        "DIABETES_CRUDE_PREV": 7.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-109, 41], [-102, 41], [-102, 37], [-109, 37], [-109, 41]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Connecticut",
+        "DIABETES_CRUDE_PREV": 9.1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-73.7, 42], [-71.8, 42], [-71.8, 41], [-73.7, 41], [-73.7, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Delaware",
+        "DIABETES_CRUDE_PREV": 11.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-75.8, 39.8], [-75, 39.8], [-75, 38.5], [-75.8, 38.5], [-75.8, 39.8]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Florida",
+        "DIABETES_CRUDE_PREV": 11.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-87.6, 31], [-85, 31], [-80, 26], [-80, 25], [-83, 24], [-87.6, 30], [-87.6, 31]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Georgia",
+        "DIABETES_CRUDE_PREV": 12.1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-85.6, 35], [-80.9, 35], [-80.9, 30.6], [-85.6, 30.6], [-85.6, 35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Hawaii",
+        "DIABETES_CRUDE_PREV": 10.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-160, 22], [-155, 22], [-155, 18], [-160, 18], [-160, 22]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Idaho",
+        "DIABETES_CRUDE_PREV": 8.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-117.2, 49], [-111.1, 49], [-111.1, 42], [-117.2, 42], [-117.2, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Illinois",
+        "DIABETES_CRUDE_PREV": 10.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-91.5, 42.5], [-87.5, 42.5], [-87.5, 37], [-91.5, 37], [-91.5, 42.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Indiana",
+        "DIABETES_CRUDE_PREV": 11.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-88, 41.8], [-84.8, 41.8], [-84.8, 37.8], [-88, 37.8], [-88, 41.8]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Iowa",
+        "DIABETES_CRUDE_PREV": 9.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-96.6, 43.5], [-91, 43.5], [-91, 40.4], [-96.6, 40.4], [-96.6, 43.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Kansas",
+        "DIABETES_CRUDE_PREV": 9.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-102, 40], [-94.6, 40], [-94.6, 37], [-102, 37], [-102, 40]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Kentucky",
+        "DIABETES_CRUDE_PREV": 13.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-89.5, 39], [-82, 39], [-82, 36.5], [-89.5, 36.5], [-89.5, 39]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Louisiana",
+        "DIABETES_CRUDE_PREV": 13.9
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-94, 33], [-89, 33], [-89, 29], [-91.5, 29], [-94, 30], [-94, 33]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Maine",
+        "DIABETES_CRUDE_PREV": 10.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-71.1, 47.5], [-67, 47.5], [-67, 43], [-71.1, 43], [-71.1, 47.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Maryland",
+        "DIABETES_CRUDE_PREV": 10.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-79.5, 39.7], [-75, 39.7], [-75, 38], [-79.5, 38], [-79.5, 39.7]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Massachusetts",
+        "DIABETES_CRUDE_PREV": 8.9
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-73.5, 42.7], [-70, 42.7], [-70, 41.2], [-73.5, 41.2], [-73.5, 42.7]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Michigan",
+        "DIABETES_CRUDE_PREV": 11.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-90.4, 48], [-82.4, 48], [-82.4, 41.7], [-87, 41.7], [-90.4, 46], [-90.4, 48]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Minnesota",
+        "DIABETES_CRUDE_PREV": 8.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-97.2, 49], [-89.5, 49], [-89.5, 43.5], [-97.2, 43.5], [-97.2, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mississippi",
+        "DIABETES_CRUDE_PREV": 14.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-91.7, 35], [-88.1, 35], [-88.1, 30], [-91.7, 30], [-91.7, 35]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Missouri",
+        "DIABETES_CRUDE_PREV": 11.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-95.8, 40.6], [-89.1, 40.6], [-89.1, 36], [-95.8, 36], [-95.8, 40.6]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Montana",
+        "DIABETES_CRUDE_PREV": 8.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-116, 49], [-104, 49], [-104, 45], [-116, 45], [-116, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Nebraska",
+        "DIABETES_CRUDE_PREV": 9.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-104, 43], [-95.3, 43], [-95.3, 40], [-104, 40], [-104, 43]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Nevada",
+        "DIABETES_CRUDE_PREV": 10.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-120, 42], [-114, 42], [-114, 35], [-120, 35], [-120, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "New Hampshire",
+        "DIABETES_CRUDE_PREV": 9.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-72.6, 45.3], [-70.7, 45.3], [-70.7, 42.7], [-72.6, 42.7], [-72.6, 45.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "New Jersey",
+        "DIABETES_CRUDE_PREV": 10.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-75.6, 41.4], [-73.9, 41.4], [-73.9, 39], [-75.6, 39], [-75.6, 41.4]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "New Mexico",
+        "DIABETES_CRUDE_PREV": 11.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-109, 37], [-103, 37], [-103, 31.3], [-109, 31.3], [-109, 37]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "New York",
+        "DIABETES_CRUDE_PREV": 10.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-79.8, 45], [-73, 45], [-71.8, 41], [-75, 41], [-79.8, 42], [-79.8, 45]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "North Carolina",
+        "DIABETES_CRUDE_PREV": 11.7
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-84.3, 36.6], [-75.5, 36.6], [-75.5, 33.8], [-84.3, 33.8], [-84.3, 36.6]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "North Dakota",
+        "DIABETES_CRUDE_PREV": 8.6
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-104.1, 49], [-96.6, 49], [-96.6, 45.9], [-104.1, 45.9], [-104.1, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Ohio",
+        "DIABETES_CRUDE_PREV": 11.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-84.8, 42], [-80.5, 42], [-80.5, 38.4], [-84.8, 38.4], [-84.8, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Oklahoma",
+        "DIABETES_CRUDE_PREV": 12.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-103, 37], [-94.4, 37], [-94.4, 33.6], [-103, 33.6], [-103, 37]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Oregon",
+        "DIABETES_CRUDE_PREV": 9.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-124.6, 46.3], [-116.5, 46.3], [-116.5, 42], [-124.6, 42], [-124.6, 46.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Pennsylvania",
+        "DIABETES_CRUDE_PREV": 10.8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-80.5, 42.3], [-74.7, 42.3], [-74.7, 39.7], [-80.5, 39.7], [-80.5, 42.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Rhode Island",
+        "DIABETES_CRUDE_PREV": 9.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-71.9, 42], [-71.1, 42], [-71.1, 41.1], [-71.9, 41.1], [-71.9, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "South Carolina",
+        "DIABETES_CRUDE_PREV": 13.4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.4, 35.2], [-78.5, 35.2], [-78.5, 32], [-83.4, 32], [-83.4, 35.2]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "South Dakota",
+        "DIABETES_CRUDE_PREV": 9.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-104.1, 45.9], [-96.5, 45.9], [-96.5, 42.5], [-104.1, 42.5], [-104.1, 45.9]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Tennessee",
+        "DIABETES_CRUDE_PREV": 13.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-90.3, 36.7], [-81.7, 36.7], [-81.7, 35], [-90.3, 35], [-90.3, 36.7]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Texas",
+        "DIABETES_CRUDE_PREV": 11.9
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-106.7, 36.5], [-93.5, 36.5], [-93.5, 26], [-106.7, 26], [-106.7, 36.5]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Utah",
+        "DIABETES_CRUDE_PREV": 7.7
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-114.1, 42], [-109, 42], [-109, 37], [-114.1, 37], [-114.1, 42]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Vermont",
+        "DIABETES_CRUDE_PREV": 8.3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-73.5, 45], [-71.5, 45], [-71.5, 42.7], [-73.5, 42.7], [-73.5, 45]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Virginia",
+        "DIABETES_CRUDE_PREV": 10.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.7, 39.3], [-75.2, 39.3], [-75.2, 36.5], [-83.7, 36.5], [-83.7, 39.3]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Washington",
+        "DIABETES_CRUDE_PREV": 9.2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-124.8, 49], [-117, 49], [-117, 45.5], [-124.8, 45.5], [-124.8, 49]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "West Virginia",
+        "DIABETES_CRUDE_PREV": 15.7
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-82.7, 40.6], [-77.7, 40.6], [-77.7, 37.2], [-82.7, 37.2], [-82.7, 40.6]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Wisconsin",
+        "DIABETES_CRUDE_PREV": 9.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-92.9, 47], [-86.8, 47], [-86.8, 42.5], [-92.9, 42.5], [-92.9, 47]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Wyoming",
+        "DIABETES_CRUDE_PREV": 8.6
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-111, 45], [-104, 45], [-104, 41], [-111, 41], [-111, 45]]]
+      }
+    }
+  ]
+}
