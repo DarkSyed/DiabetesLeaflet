@@ -1,0 +1,110 @@
+/* Additional styles for county data visualization */
+.view-toggle {
+    margin: 20px;
+    text-align: center;
+}
+
+.view-button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.view-button.active {
+    background-color: #2196F3;
+    color: white;
+    border-color: #0b7dda;
+}
+
+.view-button:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+.highlighted-row {
+    background-color: #e6f7ff !important;
+    font-weight: bold;
+    border-left: 4px solid #2196F3;
+}
+
+/* Improve table styling for better readability */
+#diabetesTable th {
+    position: sticky;
+    top: 0;
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#diabetesTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#diabetesTable tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Improve the info panel scrolling */
+#info {
+    scrollbar-width: thin;
+    scrollbar-color: #2196F3 #f5f5f5;
+}
+
+#info::-webkit-scrollbar {
+    width: 8px;
+}
+
+#info::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+#info::-webkit-scrollbar-thumb {
+    background-color: #2196F3;
+    border-radius: 4px;
+}
+
+/* Make the table caption more prominent */
+.table-caption {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.table-caption h4 {
+    color: #2196F3;
+    font-size: 18px;
+}
+
+/* Loading indicator */
+.map-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #2196F3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
