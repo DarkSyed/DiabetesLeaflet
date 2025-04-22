@@ -1,3 +1,8 @@
+// THIS IS ALL  BLOAT I USED A DIFF JS FILE FOR THE BETTER MAP WITH THE COUNTIES, 
+// THIS IS THE OLD ONE VVVVVVVVVVv
+
+
+
 // Define base maps
 const baseMaps = {
     "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

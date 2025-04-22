@@ -15,7 +15,7 @@
 }
 
 #info {
-    display: none;
+    display: flex;
     flex-direction: column;
     height: 100vh;
     width: 40%;
@@ -41,8 +41,9 @@
 
 .slidecontainer {
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px 20px;
     box-sizing: border-box;
+    border-bottom: 1px solid #eee;
 }
 
 .slider-label {
@@ -454,4 +455,33 @@ tr.highlight-state {
     stroke-width: 2.5px;
     stroke: #666;
     stroke-opacity: 1;
+}
+
+/* Update styling for the view toggle to match the new position */
+.view-toggle {
+    margin: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+/* Move slider container below the view toggle */
+.slidecontainer {
+    width: 100%;
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+}
+
+/* Make slider responsive */
+.slider {
+    width: 100%;
+}
+
+/* Adjust national stats position */
+.national-stats {
+    padding: 15px;
+    background-color: #f1f1f1;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
 }

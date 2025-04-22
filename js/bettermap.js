@@ -59,12 +59,12 @@ function style(feature) {
 
     return {
         fillColor: getColor(diabetesValue),
-        weight: 1.2,           // Thinner borders 
+        weight: 0.4,           // Much thinner borders to start with (reduced from 0.8)
         opacity: 1,
-        color: 'black',        // Black borders to match the screenshot
-        dashArray: '',         // Solid lines look better for state boundaries
-        fillOpacity: 0.85,     // Higher opacity for better color visibility
-        smoothFactor: 0.5      // Lower smooth factor preserves more detail in boundaries
+        color: 'black',        // Keep black borders
+        dashArray: '',
+        fillOpacity: 0.85,
+        smoothFactor: 0.5
     };
 }
 
@@ -106,7 +106,34 @@ function resetHighlight(e) {
 
 // Zoom to feature on click
 function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
+    try {
+        // Special case for Alaska
+        if (e.target.feature.properties.NAME === "Alaska") {
+            // Custom bounds for Alaska mainland
+            map.fitBounds([
+                [51.0, -179.0],  // Southwest corner
+                [71.5, -130.0]   // Northeast corner
+            ]);
+        } 
+        // Special case for Aleutians West county
+        else if (e.target.feature.properties.county === "Aleutians West" || 
+                 e.target.feature.properties.NAME === "Aleutians West" ||
+                 (e.target.feature.properties.COUNTY === "016" && e.target.feature.properties.STATE === "02")) {
+            // Custom bounds for Aleutian Islands
+            map.fitBounds([
+                [51.0, 172.0],   // Southwest corner
+                [55.0, -165.0]   // Northeast corner
+            ]);
+        }
+        else {
+            // For other features, use normal bounds
+            map.fitBounds(e.target.getBounds());
+        }
+    } catch (error) {
+        // Fallback if the bounds calculation fails
+        console.error("Error zooming to feature: ", error);
+        map.setView([37.8, -96], 4); // Reset to default US view
+    }
 }
 
 // Set listeners on feature
@@ -224,7 +251,7 @@ function updateCountyTable(props) {
     document.getElementById('tableCaption').style.display = 'block';
     
     if (props && props.county) {
-        document.getElementById('tableCaption').innerHTML = '<h4>County Data</h4><p>' + props.county + ', ' + props.state + ' diabetes statistics</p>';
+        document.getElementById('tableCaption').innerHTML = '<h4>County Data (2012)</h4><p>' + props.county + ', ' + props.state + ' diabetes statistics</p>';
         
         // Add row for overall diabetes prevalence
         const row1 = table.insertRow();
@@ -258,7 +285,7 @@ function updateCountyTable(props) {
             row5.insertCell(2).textContent = props.womenObesePercent;
         }
     } else {
-        document.getElementById('tableCaption').innerHTML = '<h4>County Data</h4><p>Hover over a county to see details</p>';
+        document.getElementById('tableCaption').innerHTML = '<h4>County Data (2012)</h4><p>Hover over a county to see details</p>';
     }
 }
 
@@ -271,6 +298,12 @@ function updateNationalStats() {
                 document.getElementById('nationalRate').textContent = yearData.Percentage + '%';
                 document.getElementById('nationalRange').textContent = yearData.LowerLimit + '% - ' + yearData.UpperLimit + '%';
             }
+            
+            // Ensure we remove the county year label when in state view
+            const statsTitle = document.querySelector('.national-stats h4');
+            if (statsTitle) {
+                statsTitle.innerHTML = 'National Statistics';
+            }
         }
     } else {
         // County view - calculate from county data
@@ -278,6 +311,12 @@ function updateNationalStats() {
             const stats = countyData.getNationalStats(countyLayer.toGeoJSON().features);
             document.getElementById('nationalRate').textContent = stats.average + '%';
             document.getElementById('nationalRange').textContent = stats.range;
+            
+            // Add year information only in county view
+            const statsTitle = document.querySelector('.national-stats h4');
+            if (statsTitle) {
+                statsTitle.innerHTML = 'National Statistics <span style="font-size:0.85em;font-weight:normal;">(County data: 2012)</span>';
+            }
         }
     }
 }
@@ -287,28 +326,53 @@ function updateMap() {
     document.getElementById('yearDisplay').textContent = currentYear;
     
     if (currentView === 'state') {
-        if (countyLayer) {
+        // Show year slider in state view
+        document.getElementById('yearSliderContainer').style.display = 'block';
+        
+        if (countyLayer && map.hasLayer(countyLayer)) {
             map.removeLayer(countyLayer);
         }
         if (geojsonLayer) {
+            if (!map.hasLayer(geojsonLayer)) {
+                map.addLayer(geojsonLayer);
+            }
             geojsonLayer.setStyle(style);
-            map.addLayer(geojsonLayer);
         }
         // Update view toggle buttons
         document.getElementById('stateViewBtn').classList.add('active');
         document.getElementById('countyViewBtn').classList.remove('active');
+        
+        // Reset the national stats title when switching to state view
+        const statsTitle = document.querySelector('.national-stats h4');
+        if (statsTitle) {
+            statsTitle.innerHTML = 'National Statistics';
+        }
     } else {
-        if (geojsonLayer) {
+        // Hide year slider in county view
+        document.getElementById('yearSliderContainer').style.display = 'none';
+        
+        if (geojsonLayer && map.hasLayer(geojsonLayer)) {
             map.removeLayer(geojsonLayer);
         }
         if (countyLayer) {
-            map.addLayer(countyLayer);
+            if (!map.hasLayer(countyLayer)) {
+                map.addLayer(countyLayer);
+            }
         } else {
             loadCountyData();
         }
         // Update view toggle buttons
         document.getElementById('countyViewBtn').classList.add('active');
         document.getElementById('stateViewBtn').classList.remove('active');
+
+        // Add year information to the table caption
+        document.getElementById('tableCaption').innerHTML = '<h4>County Data (2012)</h4><p>Hover over a county to see details</p>';
+        
+        // Update the national stats title for county view
+        const statsTitle = document.querySelector('.national-stats h4');
+        if (statsTitle) {
+            statsTitle.innerHTML = 'National Statistics <span style="font-size:0.85em;font-weight:normal;">(County data: 2012)</span>';
+        }
     }
     
     info.update();
@@ -470,13 +534,13 @@ loadStateData();
 
 // Show the explore data panel when the button is clicked
 document.getElementById('exploreDataBtn').addEventListener('click', function() {
-    document.getElementById('info').style.display = 'flex';
+    // Only hide the map header, don't modify the info panel
     document.querySelector('.map-header').classList.add('hidden');
 });
 
 // Hide the explore data panel when the back button is clicked
 document.getElementById('backToMapBtn').addEventListener('click', function() {
-    document.getElementById('info').style.display = 'none';
+    // Only show the map header, don't modify the info panel
     document.querySelector('.map-header').classList.remove('hidden');
 });
 
@@ -500,3 +564,37 @@ if (map) {
     map.options.minZoom = 3;
     map.options.maxZoom = 10;
 }
+
+// Add zoom handler to adjust border weight
+map.on('zoomend', function() {
+    const currentZoom = map.getZoom();
+    // Scale from 0.4 to 1.2 based on zoom (lower range than before)
+    const newWeight = Math.min(0.4 + (currentZoom - 4) * 0.15, 1.2);
+    
+    if (geojsonLayer) {
+        geojsonLayer.setStyle({
+            weight: newWeight
+        });
+    }
+    
+    if (countyLayer && map.hasLayer(countyLayer)) {
+        countyLayer.setStyle({
+            weight: Math.max(0.2, newWeight * 0.6) // Even thinner for counties
+        });
+    }
+});
+
+// Also update countyData.js style function by updating the initial countyData.style:
+countyData.style = function(feature) {
+    const diabetesValue = feature.properties.diabetesPercent ? parseFloat(feature.properties.diabetesPercent) : 0;
+    
+    return {
+        fillColor: this.getColor(diabetesValue),
+        weight: 0.4,          // Thinner borders for counties (reduced from 0.8)
+        opacity: 1,
+        color: 'black',
+        dashArray: '',
+        fillOpacity: 0.85,
+        smoothFactor: 0.5
+    };
+};

@@ -26,14 +26,20 @@
         <button id="exploreDataBtn" class="cta-button">Explore the Data</button>
       </div>
       <div id="map"></div>
-      <div id="info">
+      <div id="info" style="display: flex">
         <div class="info-header">
           <h3>US Diabetes Prevalence Map</h3>
           <button id="backToMapBtn" class="back-button">
             <span>&larr;</span> Back to Map
           </button>
         </div>
-        <div class="slidecontainer">
+        <div class="view-toggle">
+          <button id="stateViewBtn" class="view-button active">
+            State View
+          </button>
+          <button id="countyViewBtn" class="view-button">County View</button>
+        </div>
+        <div class="slidecontainer" id="yearSliderContainer">
           <div class="slider-label">
             <span>Year: </span>
             <span id="yearDisplay">2020</span>
@@ -55,13 +61,6 @@
           </p>
           <p>Range: <span id="nationalRange">8.4% - 9.2%</span></p>
         </div>
-        <div class="view-toggle">
-          <button id="stateViewBtn" class="view-button active">
-            State View
-          </button>
-          <button id="countyViewBtn" class="view-button">County View</button>
-        </div>
-        <!-- Add this div to hold the table caption -->
         <div id="tableCaption" class="table-caption" style="display: none">
           <h4>State Data</h4>
           <p>Hover over a state to see details</p>
@@ -83,6 +82,6 @@
     <script src="js/countyData.js"></script>
     <script src="js/nationalStats.js"></script>
     <script src="js/visualConsistency.js"></script>
-    <script src="js/enhanced_map.js"></script>
+    <script src="js/bettermap.js"></script>
   </body>
 </html>
