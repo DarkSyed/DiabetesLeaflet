@@ -504,12 +504,26 @@ function loadStateData() {
 // Load county-level diabetes data
 async function loadCountyData() {
     showLoader();
+    console.log("Starting county data load process");
     
     try {
+        // Log that we have the counties variable
+        if (typeof counties !== 'undefined') {
+            console.log("Counties variable is available with", 
+                       counties.features ? counties.features.length : 0, 
+                       "features");
+        } else {
+            console.error("Counties variable is not defined!");
+        }
+        
         // Use the countyData.js module to load and process the data
         const data = await countyData.loadData();
         
         if (data) {
+            console.log("Successfully loaded county data with", 
+                       data.features ? data.features.length : 0, 
+                       "features");
+            
             countyLayer = L.geoJSON(data, {
                 style: countyData.style,
                 onEachFeature: onEachFeature
@@ -517,9 +531,12 @@ async function loadCountyData() {
             
             if (currentView === 'county') {
                 countyLayer.addTo(map);
+                console.log("Added county layer to map");
             }
             
             updateNationalStats();
+        } else {
+            console.error("County data is null or undefined");
         }
         
         hideLoader();
