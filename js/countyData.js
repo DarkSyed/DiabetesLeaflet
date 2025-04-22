@@ -2,23 +2,50 @@
 const countyData = {
   loadData: async function() {
     try {
-      // Load county boundaries
-      const countyResponse = await fetch('../data/us_counties.geojson');
-      const countyBoundaries = await countyResponse.json();
+      // Use the global counties variable instead of fetching the file
+      const countyBoundaries = counties; // Use the variable from counties.js
       
-      // Load diabetes prevalence data
-      const diabetesResponse = await fetch('../data/diabetes_prevalence.csv');
-      const diabetesText = await diabetesResponse.text();
+      // Still need to load diabetes prevalence data
+      let diabetesData;
       
-      // Parse CSV data
-      const diabetesData = this.parseCSV(diabetesText);
+      try {
+        // Try multiple path options to improve compatibility
+        const paths = [
+          './data/diabetes_prevalence.csv',
+          'data/diabetes_prevalence.csv',
+          '../data/diabetes_prevalence.csv',
+          '/DiabetesLeaflet/data/diabetes_prevalence.csv'
+        ];
+        
+        // Try each path until one works
+        for (const path of paths) {
+          try {
+            const response = await fetch(path);
+            if (response.ok) {
+              const text = await response.text();
+              diabetesData = this.parseCSV(text);
+              console.log(`Successfully loaded diabetes data from ${path}`);
+              break;
+            }
+          } catch (e) {
+            console.log(`Path ${path} failed, trying next...`);
+          }
+        }
+        
+        if (!diabetesData) {
+          throw new Error('Could not load diabetes data from any path');
+        }
+      } catch (error) {
+        console.error('Error loading diabetes data:', error);
+        // Create empty diabetes data as fallback
+        diabetesData = [];
+      }
       
       // Combine data
       const combinedData = this.combineData(countyBoundaries, diabetesData);
-      
       return combinedData;
     } catch (error) {
-      console.error('Error loading county data:', error);
+      console.error('Error in loadData:', error);
       return null;
     }
   },
